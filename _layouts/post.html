@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{site.title}} &raquo; {{page.title}}</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+window.addEventListener('load', function(event) {
+  document.querySelectorAll('pre>code').forEach(function(e) { e.classList.add('prettyprint'); })
+  PR.prettyPrint();
+}, false);
+</script>
+</head>
+<body>
+	<div class="header">
+		<h1><a href="{{site.base-url}}">{{site.title}}</a> &raquo; <a href="{{page.url}}">{{page.title}}</a></h1>
+	</div>
+	<div class="body">
+		{{post.content}}
+		<p><small>{{post.updatedAt | date: "yyyy/MM/dd"}}</small></p>
+	</div>
+</body>
+</html>

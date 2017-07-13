@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{site.title}} &raquo; {{page.title}}</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+</head>
+<body>
+	<div class="header">
+		<h1><a href="{{site.base-url}}">{{site.title}}</a> &raquo; <a href="{{page.url}}">{{page.title}}</a></h1>
+	</div>
+	<div class="body">
+		{% for post in posts %}
+		{{post.updatedAt | date: "yyyy/MM/dd"}} <a href="{{post.url}}">{{post.title}}</a><br />
+		{% endfor %}
+	</div>
+</body>
+</html>
